@@ -1,0 +1,366 @@
+/*Global Style*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+h1{
+  font-size: 2.2rem;
+  font-family: 'Pattaya', sans-serif;
+  font-weight: 400;
+}
+
+h2{
+  font-size: 4.8rem;
+}
+h3{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+h4,h5{
+  font-size: 2.8rem;
+}
+
+button,
+input,
+label,
+li,
+p {
+  font-size: 2rem;
+}
+
+button{
+  padding:2rem 4rem;
+  background:#4c6e97;
+  color:white;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor:pointer;
+  font-weight: 400;
+  transition: background 0.5s ease-in-out 0.3s;
+}
+
+button:hover{
+  background:#4f1281;
+}
+
+
+/*Nav bar */
+
+.main-head{
+  background-color:#131c27;
+  color:white;
+  position:sticky;
+  top:0%;
+  z-index:2;
+  
+}
+
+nav{
+  display: flex;
+  min-height:10vh;
+  width:90%; /*Along with margin auto it will set the nav items at some distant from border without using margin:2rem(eg)*/
+  margin:auto;
+  padding:2rem;
+  align-items: center; /*center the logo and ul */
+  flex-wrap: wrap;
+ 
+}
+
+a{
+  color:white; 
+  text-decoration: none;
+}
+
+.logo{ 
+  flex: 2 1 40rem; 
+  
+} 
+
+nav ul{
+  display: flex;
+  flex: 1 1 40rem;/*This ensures logo and ul takes 66/33 space*/
+  align-items: center;
+  justify-content: space-around;/*not align content*/
+  list-style: none;
+}
+
+/*hero section*/
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),transparent),url("/pictures/landing-page.jpg");
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  text-align: center;
+  background-size: cover;
+  background-position:center;
+  color:white;
+}
+
+.hero h3{
+  padding: 5rem;
+}
+
+
+
+/*Media Query*/
+
+@media screen and (max-width:934px){
+  html{
+    font-size: 50%;
+  }
+  
+  nav{
+    text-align:center;
+  }
+
+  .logo{
+    padding:2rem; 
+  }
+  .clouds{
+    height: 40rem;
+    pointer-events: none;
+  }
+
+  .cloud-1{
+    z-index: -1;
+  }
+
+  .cloud-2{
+   display: none;
+  }
+  
+  #locations h3{
+  
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    background:#131c275b;
+
+
+  }
+  
+ #locations h2{
+    font-size: 4rem;
+  } 
+
+  footer{
+    text-align: center;
+    
+  }
+
+  footer h3{
+    padding-bottom:2rem;
+  }
+  .form-wrapper{
+    min-width:100%;
+  }
+}
+
+
+
+  @keyframes cloud-animations{
+    from{
+      transform: translate(10%, -10%);
+    }
+    to{
+      transform: translate(0%, 0%);
+    }
+  }
+
+
+
+/*Locations Section*/
+#locations{
+  background: linear-gradient(rgba(0, 0, 0, 0.486),transparent),url("./pictures/new-york-page.png");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.locations-header{
+  width:90%;
+  margin:auto;
+}
+
+.locations-header h2{
+  text-decoration:underline;
+}
+
+.locations-header h3{
+  font-size: 2.8rem;
+  padding: 2rem 0;
+  background: linear-gradient(#131c27, #663b34);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+
+.clouds{
+  position: absolute;
+  top:0%;
+  right:0%;
+  height: 50rem;
+  pointer-events: none;
+}
+
+.cloud-1{
+  animation: cloud-animations 3s infinite alternate ease-in-out;
+}
+
+.cloud-2{
+  top:20%;
+  z-index: -1;
+  opacity:0.5;
+  animation: cloud-animations 4s infinite alternate ease-in-out;
+}
+
+/* Benifits */
+.benifits-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #131c27;
+  color: white;
+  padding:1rem 0;
+  text-align: center;
+  min-height: 30vh;
+}
+
+.benifits-head h3{
+  padding:2rem 0;
+}
+
+.cards{
+  display: flex;
+  width: 90%;
+  margin:auto;
+  min-height: 70vh;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards img{
+  max-width: 15%;
+  
+}
+
+.card-icon{
+  background: #4c6e97;
+  display: flex;
+  justify-content:center;
+  padding:1rem 0;
+}
+.card{
+  
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 30rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+}
+
+.card h4, .card p {
+  padding:2rem 0;
+}
+
+/*Form*/
+#contact{
+  min-height:100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.486),transparent),url("./pictures/contact-mountain.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper{
+  background:#131c27a8;
+  color:white;
+  min-width:60%;
+  border-radius: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-head{
+  padding:5rem;
+  text-align: center;
+  text-decoration: underline #000000 0.3rem;
+}
+
+.name-form, .email-form{
+  padding:5rem;
+  text-align: center;
+}
+
+.form-wrapper label{
+  margin:0 2rem;
+}
+
+.form-wrapper button{
+  width:100%;
+  padding:1.5rem;
+  font-size: 2.2rem;
+  border-top-left-radius:0;
+  border-top-right-radius:0;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  margin-top: 8rem;
+}
+
+
+/*Footer*/
+footer{
+color:white;
+background: #131c27;
+}
+
+.footer-wrapper{
+  display: flex;
+  width: 90%;
+  margin:auto;
+  align-items: center; 
+  min-height: 10vh;
+ flex-wrap: wrap; 
+}
+
+footer h3{
+  flex: 1 1 20rem;
+  font-size: 2rem;
+}
+
+footer span{
+  font-family: 'Pattaya', sans-serif;
+  font-weight: 400;
+}
+
+footer ul{
+  display: flex;
+  flex: 1 1 20rem;
+  justify-content: space-evenly;
+  list-style: none;
+}
